@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Kerala_God%27s_Own_Country_Logo.svg/1200px-Kerala_God%27s_Own_Country_Logo.svg.png" width="65" height="50" alt="">
+      </a>
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Home</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="navbar-brand" aria-current="page" href="districts.html">Districts</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="navbar-brand" aria-current="page" href="#">About Us</a>
+        </li> -->
+          <li class="nav-item">
+            <a class="navbar-brand" href="login.html">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand" href="sign up.html" tabindex="-1" aria-disabled="true">Sign Up</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+            
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<body background="https://cdn.wallpapersafari.com/34/44/AK3RHL.jpg" class="signup">
+    <h2 class="signhead">Sign Up</h2>
+    <div class="col-lg-3 loginmargin" id="fid">
+    <form action="index.html" onsubmit="return signvalidate()" >
+      <div class="form-group">
+        <label for="inputEmail">First Name</label>
+        <input type="text" class="form-control" id="inputfirst" placeholder="First name">
+        <label id="sfirst" style="color:red;visibility:hidden">Invalid</label>
+      
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Last Name</label>
+      <input type="text" class="form-control" id="inputlast" placeholder="Last name">
+      <label id="slast" style="color:red;visibility:hidden">Invalid</label>
+    
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Phone </label>
+    <input type="text" class="form-control" id="inputph" placeholder="Phone">
+    <label id="sphone" style="color:red;visibility:hidden">Invalid</label>
+  
+</div>
+      <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input type="text" class="form-control" id="Email" placeholder="Email">
+          <label id="mail" style="color:red;visibility:hidden">Invalid</label>
+        
+      </div>
+      <div class="form-group">
+       
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Password">
+          <label id="spwd" style="color:red;visibility:hidden">Invalid</label>
+        
+      </div>
+      <div class="form-group">
+        <label for="inputEmail">Confirm Password</label>
+        <input type="text" class="form-control" id="inputrepass" placeholder="Retype password">
+        <label id="srepwd" style="color:red;visibility:hidden">Invalid</label>
+      
+    </div>
+
+      <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div>
+
+    <script>
+      function signvalidate()
+      {  
+            var mails=document.getElementById("Email").value;
+            var pass=document.getElementById("Password").value;
+            var repwd=document.getElementById("inputrepass").value;
+            var first=document.getElementById("inputfirst").value;
+            var last=document.getElementById("inputlast").value;
+            var phone=document.getElementById("inputph").value;
+            // var regpwd=/^([a-zA-Z0-9]{8,20})$/;
+            // var regfirst= /^([a-zA-Z]{2,20})$/;
+            // var reglast= /^([a-zA-Z]{2,20})$/;
+          
+
+            // var regph=/^\d{10}$/;
+            // var regex= /^([a-zA-Z0-9\.-]+)@([a-z0-9-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+            
+            
+              
+
+            
+        
+            if(first == "")
+            {
+              document.getElementById("sfirst").innerHTML="Invalid";
+              document.getElementById("sfirst").style.visibility="visible";
+              document.getElementById("sfirst").style.color="red";
+            
+              return false;
+            }
+            if((first.length <=2) || (first.length > 20))
+            {
+              document.getElementById("sfirst").innerHTML="Invalid";
+              document.getElementById("sfirst").style.visibility="visible";
+              document.getElementById("sfirst").style.color="red";
+              return false;
+            }
+            if(!isNaN(first))
+            {
+              document.getElementById("sfirst").innerHTML="Invalid";
+              document.getElementById("sfirst").style.visibility="visible";
+              document.getElementById("sfirst").style.color="red";
+              return false;
+            }
+            if((first.length > 2) || (first.length <= 20))
+            {
+              document.getElementById("sfirst").innerHTML="valid";
+              document.getElementById("sfirst").style.visibility="visible";
+              document.getElementById("sfirst").style.color="green";
+              // return false;
+            }
+            if(last == "")
+            {
+              document.getElementById("slast").innerHTML="Invalid";
+              document.getElementById("slast").style.visibility="visible";
+              document.getElementById("slast").style.color="red";
+              return false;
+            }
+            if((last.length <=2) || (last.length > 20))
+            {
+              document.getElementById("slast").innerHTML="Invalid";
+              document.getElementById("slast").style.visibility="visible";
+              document.getElementById("slast").style.color="red";
+              return false;
+            }
+            if(!isNaN(last))
+            {
+              document.getElementById("slast").innerHTML="Invalid";
+              document.getElementById("slast").style.visibility="visible";
+              document.getElementById("slast").style.color="red";
+              return false;
+            }
+            if((last.length > 2) || (last.length <= 20))
+            {
+              document.getElementById("slast").innerHTML="valid";
+              document.getElementById("slast").style.visibility="visible";
+              document.getElementById("slast").style.color="green";
+              
+            }
+            if(phone== "")
+            {
+              document.getElementById("sphone").innerHTML="Invalid";
+              document.getElementById("sphone").style.visibility="visible";
+              document.getElementById("sphone").style.color="red";
+             
+              return false;
+
+            }
+            if(phone.length < 10 || phone.length > 10)
+            {
+              document.getElementById("sphone").innerHTML="Invalid";
+              document.getElementById("sphone").style.visibility="visible";
+              document.getElementById("sphone").style.color="red";
+              return false;
+
+            }
+            if(phone.length == 10)
+            {
+              document.getElementById("sphone").innerHTML="valid";
+              document.getElementById("sphone").style.visibility="visible";
+              document.getElementById("sphone").style.color="green";
+              
+                if(pass=="" || mails=="" ||repwd=="")
+                {
+                  document.getElementById("semail").innerHTML="Invalid";
+                  document.getElementById("semail").style.visibility="visible";
+                  document.getElementById("semail").style.color="red";
+                  document.getElementById("spwd").innerHTML="Invalid";
+                  document.getElementById("spwd").style.visibility="visible";
+                  document.getElementById("spwd").style.color="red";
+                  document.getElementById("srepwd").innerHTML="Invalid";
+                  document.getElementById("srepwd").style.visibility="visible";
+                  document.getElementById("srepwd").style.color="red";
+                  return false;
+                }
+                if(!regex.test(mails)){
+                  document.getElementById("semail").innerHTML="Invalid";
+                  document.getElementById("semail").style.visibility="visible";
+                  document.getElementById("semail").style.color="red";
+
+                }
+                if(regex.test(mails)){
+                  document.getElementById("semail").innerHTML="valid";
+                  document.getElementById("semail").style.visibility="visible";
+                  document.getElementById("semail").style.color="green";
+
+                }
+                if(pass.length < 8)
+              {
+                document.getElementById("spwd").innerHTML="Invalid";
+                document.getElementById("spwd").style.visibility="visible";
+                document.getElementById("spwd").style.color="red";
+                
+
+              }
+              if(repwd==pass)
+              {
+                return true;
+              }
+
+            }
+          }
+
+
+
+           
+
+          
+            
+
+          
+          
+        
+  
+      </script>   
+</body>
+</html>
