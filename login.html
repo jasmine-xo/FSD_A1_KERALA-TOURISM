@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body background="https://www.trinityairtravel.com/packagegallery/8138_Munnar.jpg" class="login">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Kerala_God%27s_Own_Country_Logo.svg/1200px-Kerala_God%27s_Own_Country_Logo.svg.png" width="65" height="50" alt="">
+      </a>
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="navbar-brand" aria-current="page" href="districts.html">Districts</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="navbar-brand" aria-current="page" href="#">About Us</a>
+        </li> -->
+          <li class="nav-item">
+            <a class="navbar-brand" href="login.html">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand" href="sign up.html" tabindex="-1" aria-disabled="true">Sign Up</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+            
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <h2 class="loghead">Log In</h2>
+  <div class="col-lg-3 loginmargin">
+
+
+    
+    <!-- <form action="index.html" onsubmit="return validate()">
+        <div>
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          <!-- <label id="lemail" style="color:red;visibility:hidden">Invalid</label>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+          <label id="lpwd" style="color:red;visibility:hidden">Invalid</label>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+        <button>Submit</button>
+      </form>
+      </div> -->
+<!-- 
+      <form action="home.html" onsubmit="return validate()">
+        <label for="email">Email</label>
+      <input type="text" placeholder="email" id="email">
+    
+      <label id="lemail" style="color:red;visibility:hidden">Invalid</label>
+      <br><br><br>
+      <label for="email">Password</label>
+      <input type="password" placeholder="password" id="pwd"> 
+      <label id="lpwd" style="color:red;visibility:hidden">Invalid</label>
+      <br><br> -->
+      <form action="index.html" onsubmit="return validate()">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+            <label id="lemail" style="color:red;visibility:hidden">Invalid</label>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <label id="lpwd" style="color:red;visibility:hidden">Invalid</label>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label"><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+      <!-- <label for="phone">Phone</label>
+      <input type="text" placeholder="phone" id="ph"> 
+      <label id="lph" style="color:red;visibility:hidden">Invalid</label>
+      <br><br>
+    
+      <label for="error" id="emailerror"></label> -->
+
+      <!-- <label for="password">password</label>
+      <input type="password" placeholder="password" id="pwd"> 
+       <input type="submit" id="submit"> -->
+       <!-- <button>submit</button> 
+  </form> -->
+      <!-- <script src="form.js"></script>    -->
+      <script>
+        function validate()
+        {  
+            var email=document.getElementById("inputEmail").value;
+            let pwd=document.getElementById("inputPassword").value;
+            // var ph=document.getElementById("ph").value;
+            var regpwd=/^([a-zA-Z0-9]{8,20})$/;
+            // var regph=/^[0-9]{10}$/;
+            var regexp= /^([a-zA-Z0-9\.-]+)@([a-z0-9-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+              
+            if(email=="" || pwd=="")
+            {
+                document.getElementById("lemail").innerHTML="Invalid";
+                document.getElementById("lemail").style.visibility="visible";
+                document.getElementById("lemail").style.color="red";
+                document.getElementById("lpwd").innerHTML="Invalid";
+                document.getElementById("lpwd").style.visibility="visible";
+                document.getElementById("lpwd").style.color="red";
+            }
+                
+                
+            if(!regexp.test(email)){
+                document.getElementById("lemail").innerHTML="Invalid";
+                document.getElementById("lemail").style.visibility="visible";
+                document.getElementById("lemail").style.color="red";
+                return false;
+                            
+                }
+            if(regexp.test(email))
+            {
+              document.getElementById("lemail").innerHTML="valid";
+              document.getElementById("lemail").style.visibility="visible";
+              document.getElementById("lemail").style.color="green";
+                }
+
+            if(!regpwd.test(pwd)) {
+              document.getElementById("lpwd").innerHTML="Invalid";
+              document.getElementById("lpwd").style.visibility="visible";
+              document.getElementById("lpwd").style.color="red";
+              return false;
+            }
+            if(pwd.length <=7)
+                { 
+                  document.getElementById("lpwd").innerHTML="Length of password should be more than 8";
+                  document.getElementById("lpwd").style.visibility="visible";
+                  document.getElementById("lpwd").style.color="red";
+                  return false;
+                }
+           
+
+           
+           if(pwd.length >8)
+              {
+
+                return true;
+              }  
+            
+            // if(!regpwd.test(pwd))
+            //     {
+            //       document.getElementById("lpwd").innerHTML="Invalid";
+            //       document.getElementById("lpwd").style.visibility="visible";
+            //       document.getElementById("lpwd").style.color="red";
+            //       return false;
+    
+            //     }
+                // if(!regpwd.test(pwd))
+                // {
+                //   document.getElementById("lpwd").innerHTML="valid";
+                //   document.getElementById("lpwd").style.visibility="visible";
+                //   document.getElementById("lpwd").style.color="green";
+    
+                // }
+    
+             
+              // if(pwd.length()>=8)
+              //   {
+              //     document.getElementById("lpwd").innerHTML="valid";
+              //     document.getElementById("lpwd").style.visibility="visible";
+              //     document.getElementById("lpwd").style.color="green";
+              //   }
+              // if(regexp.test(email) || pwd.length>=8)
+              //   {
+              //     return false;
+              //   }
+              }
+            
+                    // {
+                    //     if(!regph.test(ph))
+                    //     {
+                    //         document.getElementById("lph").innerHTML="Invalid";
+                    //         document.getElementById("lph").style.visibility="visible";
+                    //         document.getElementById("lph").style.color="red";
+                    //         return false;
+    
+                    //     }
+                    //     else{
+                    //         document.getElementById("lph").innerHTML="valid";
+                    //         document.getElementById("lph").style.visibility="visible";
+                    //         document.getElementById("lph").style.color="green";
+                    
+    
+                    // }
+    
+        </script>
+</body>
+</html>
